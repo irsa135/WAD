@@ -1,0 +1,18 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout_3.cshtml";
+    <link rel="stylesheet" href="~/css/sig.css" />
+}
+
+ <div class="login-form">
+        <h1>SignIn Form</h1>
+        <form action="#" method="post">
+            <p>User Name</p>
+            <input type="email" required placeholder="xyz@gmail.com">
+            <p>Password</p>
+            <input type="password" required placeholder="Enter password">
+            <button type="submit" onclick="openpopup()" id="btn">Sign In</button>
+            <button type="reset" class="btn">Clear</button>
+            <div class="text">Don't have any account ? <a href="@Url.Action("SignUp","Home")">Sign Up</a></div>
+
+        </form>
+    </div>

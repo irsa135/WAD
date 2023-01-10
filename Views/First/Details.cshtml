@@ -1,0 +1,69 @@
+﻿@model Falcon.Models.DataModel
+
+@{
+    ViewData["Title"] = "Details";
+    Layout = "~/Views/Shared/_Layout_2.cshtml";
+    
+}
+<head>
+    <style>
+        h1 {
+            text-align: center;
+            color: red;
+            font-weight: bold;
+            font-family: 'Times New Roman', Times, serif;
+        }
+
+        a.back {
+            border: solid 1px red;
+            text-decoration: none;
+            background: Red;
+            color: white;
+            padding: 8px 8px;
+            border-radius: 5px;
+        }
+
+        .main {
+            margin-left: 39%;
+            margin-top: 6%;
+            font-family: 'Times New Roman', Times, serif;
+            font-size: 20px;
+        }
+
+        .second {
+            margin-top: 3%;
+            margin-left: 39%;
+            margin-bottom: 7%;
+        }
+    </style>
+</head>
+<h1>DETAIL</h1>
+<div class="main">
+    <div class="body">
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Email)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Email)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Password)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Password)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Message)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Message)
+        </dd>
+    </dl>
+    </div>
+</div>
+<div class="second">
+   
+    <a href="@Url.Action("Edit","First")" class="back">Update</a>
+    <a href="@Url.Action("Contact","First")" class="back">Back to List</a>
+</div>

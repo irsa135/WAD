@@ -1,0 +1,84 @@
+﻿@model Falcon.Models.DataModel
+
+@{
+    ViewData["Title"] = "Create";
+    Layout = "~/Views/Shared/_Layout_2.cshtml";
+}
+<head>
+    <style>
+        h1 {
+            text-align: center;
+            color: red;
+            font-weight: bold;
+            font-family: 'Times New Roman', Times, serif;
+        }
+
+        .row .col-md-4 {
+            border: none;
+            margin-left: 38%;
+            margin-bottom: 10%;
+        }
+
+        input {
+            border: solid 2px black;
+            margin: 10px 7px;
+        }
+
+        label {
+            font-size: 20px;
+            font-family: 'Times New Roman', Times, serif;
+            font-weight: bold;
+        }
+
+        a.back {
+            border: solid 1px red;
+            text-decoration: none;
+            background: Red;
+            color: white;
+            padding: 8px 8px;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+
+<h1>Enter Information</h1>
+
+
+
+
+ 
+ 
+<div class="row">
+    
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label >Enter Email</label>
+                <input asp-for="Email" class="form-control" />
+                <span asp-validation-for="Email" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label >Enter Password</label>
+                <input asp-for="Password" class="form-control" />
+                <span asp-validation-for="Password" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label >Enter Message</label>
+                <input asp-for="Message" class="form-control" />
+                <span asp-validation-for="Message" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+                 <input type="reset" value="Clear" class="btn btn-danger" />
+                <a href="@Url.Action("Contact","First")" class="back">Back To List</a>
+
+              
+            </div>
+            
+
+        </form>
+    </div>
+</div>
+
+

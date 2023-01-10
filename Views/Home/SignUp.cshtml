@@ -1,0 +1,119 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout_3.cshtml";
+    <link rel="stylesheet" href="~/css/up.css" />
+}
+    <body>
+    <div class="regis-form">
+        <h1>Sign Up</h1>
+        <form action="form.html" id="signupform" name="signupform" onsubmit="return validate()">
+            <p>First Name</p>
+            <input type="text" id="fn" placeholder="Enter your First Name">
+            <span id="fname" class="text-danger" style="color:red ; font-size: 12px;"></span>
+            <p>Last Name</p>
+            <input type="text" id="ln" placeholder="Enter your Last Name">
+            <span id="lname" class="text-danger" style="color:red ;"></span>
+            <p>Enter Phone</p>
+            <input type="number" id="num" placeholder="Enter your Number">
+            <span id="no" class="text-danger" style="color:red ;"></span>
+            <p>Email</p>
+            <input type="Email" id="eml" placeholder="abc@gmail.com">
+            <span id="Em" class="text-danger" style="color:red ;"></span>
+            <p>Password</p>
+            <input type="password" id="pas" placeholder="Enter your Password">
+            <span id="psw" class="text-danger" style="color:red ;"></span>
+            
+                <select id="drop">
+                    <option>Select Country</option>
+                    <option>America</option>
+                    <option>Azerbhaijan</option>
+                    <option>Africa</option>
+                    <option>Austrilla</option>
+                    <option>Pakistan</option>
+            </select>  <select id="drop">
+                <option>Zip Code</option>
+                <option>51310</option>
+                <option>51400</option>
+                <option>61310</option>
+                <option>51390</option>
+            </select>
+               <br>
+                <br>
+
+                <button type="submit" onclick="openpopup()" id="btn">Register</button>
+
+
+        </form>
+    </div>
+   
+    </body>
+<script type="text/javascript">
+    let popup = document.getElementById("popup");
+    function openpopup() {
+        popup.classList.add("open-popup");
+    }
+    function closepopup() {
+        popup.classList.remove("open-popup");
+    }
+    function validate() {
+        var user = document.getElementById('fn').value;
+        var name2 = document.getElementById('ln').value;
+        var number = document.getElementById('num').value;
+        var emal = document.getElementById('eml').value;
+        var code = document.getElementById('pas').value;
+        var list = document.getElementById('drop').value;
+
+        if (user == "") {
+            document.getElementById('fname').innerHTML = "*** field cannot be empty";
+            return false;
+        }
+        if ((user.length < 3) || (user.length > 25)) {
+            document.getElementById('fname').innerHTML = "*** Name length can't be less than 3 nor more than 24";
+            return false;
+        }
+        if (!isNaN(user)) {
+            document.getElementById('fname').innerHTML = "*** only characters are allowed";
+            return false;
+        }
+        if (name2 == "") {
+            document.getElementById('lname').innerHTML = "*** field cannot be empty";
+            return false;
+        }
+        if ((name2.length < 3) || (user.length > 25)) {
+            document.getElementById('lname').innerHTML = "*** Name length can't be less than 3 nor more than 24";
+            return false;
+        }
+        if (number == "") {
+            document.getElementById('no').innerHTML = "*** field cannot be empty";
+            return false;
+        }
+
+        if (number.length < 11) {
+            document.getElementById('no').innerHTML = "*** Enter a valid Number";
+            return false;
+        }
+        if (emal == "") {
+            document.getElementById('Em').innerHTML = "*** field cannot be empty";
+            return false;
+        }
+
+        if (emal.charAt(emal.length - 4) != '.' && (emal.charAt(emal.length - 3) != '.')) {
+            document.getElementById('Em').innerHTML = "*** invalid Email"
+            return false;
+        }
+        if (code == "") {
+            document.getElementById('psw').innerHTML = "*** field cannot be empty";
+            return false;
+        }
+        if ((code.length <= 5) || (user.length > 15)) {
+            document.getElementById('psw').innerHTML = "*** Name length can't be less than 3 nor more than 24";
+            return false;
+        }
+        if (list == "") {
+            return false;
+        }
+
+
+
+        return true;
+    }
+</script>

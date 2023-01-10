@@ -1,0 +1,98 @@
+﻿<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>D'ZIRE</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="~/css/web.css" />
+</head>
+<body>
+    <section class="header">
+        <nav>
+            <label class="logo">D'ZIRE</label>
+            <div class="nav-links">
+                <ul>
+                    <li><a href="@Url.Action("Index","Home")" target="_blank">Home</a></li>
+                    <li><a href="@Url.Action("About","Home")" target="_blank">About</a></li>
+                    <li><a href="@Url.Action("Blog","Home")" target="_blank">Blog</a></li>
+                    <li><a href="@Url.Action("Contact","First")" target="_blank">Contact</a></li>
+                    <li><a href="@Url.Action("SignIn","Home")" class="btn_sign" target="_blank">Sign In</a></li>
+                </ul>
+            </div>
+        </nav>
+        <div class="hero">
+
+            <div class="text-box">
+                <h1><i>True Name of Fashion</i></h1>
+                <p>
+                    D'ZIRE is a desire of every person. We got a huge variety regarding choice of every person<br>
+                    Our product won't let you down
+                </p>
+            </div>
+            <br>
+            <br>
+            <br><div class="space"></div>
+            <div class="slide hi-slide">
+                <div class="hi-prev"></div>
+                <div class="hi-next"></div>
+
+
+                <ul>
+                    <li><img src="~/images/fas.jpg" alt="" /></li>
+                    <li><img src="~/images/fas2.jfif" alt=""></li>
+                    <li><img src="~/images/fas3.jpg" alt=""></li>
+                    <li><img src="~/images/fas5.jfif" alt=""></li>
+                    <li><img src="~/images/fas6.jpg" alt=""></li>
+                    <li><img src="~/images/row2.3.webp" alt=""></li>
+                    <li><img src="~/images/row 2.2.webp" alt=""></li>
+                    <li><img src="~/images/row 2.1.jpg" alt=""></li>
+                </ul>
+            </div>
+            <script src="https://code.jquery.com/jquery-3.6.1.js"></script>
+            <script src="~/js/hislide/jquery.hislide.js"></script>
+            <script>
+                $('.slide').hiSlide();
+            </script>
+        </div>
+    </section>
+    <main>
+        @RenderBody()
+    </main>
+
+
+    <div class="back"></div>
+    <div class="icons" style="text-align:center" ;>
+        <a href="#" class="fa fa-facebook"></a>
+        <a href="https://www.instagram.com/" class="fa fa-instagram"></a>
+        <a href="#" class="fa fa-twitter"></a>
+        <a href="https://www.youtube.com/channel/UCwyTLxM9Yn85mL6N55OH_1g/videos" class="fa fa-youtube"></a>
+    </div>
+    <br>
+    <p class="endline">Copyright © All rights reserved: Designed by Irsa Imtiaz</p>
+
+
+
+    <div class="popup">
+
+        <button class="close">&times;</button>
+        <h1><i>Welcome at D'ZIRE </i></h1><br>
+        <p><i>you will et all the latest updates Clothing has been an important part of human culture since prehistoric times. Modern humans depend on clothing for protection from the elements, identity, and social status. People wear clothes for many </i></p><br>
+        <h3 class="link"><a href="@Url.Action("SignIn","Home")">LogIn</a></h3>
+    </div>
+</body>
+<script type="text/javascript">
+    document.querySelector(".close").addEventListener("click", function () {
+        document.querySelector(".popup").style.display = "none";
+    });
+    window.addEventListener("load", function () {
+        setTimeout(
+            function open(event) {
+                document.querySelector(".popup").style.display = "block";
+            },
+            2000
+        )
+    });
+</script>
+
+</html>

@@ -1,0 +1,109 @@
+﻿@model IEnumerable<Falcon.Models.DataModel>
+@{
+    ViewData["Title"] = "Contact";
+    Layout = "~/Views/Shared/_Layout_2.cshtml";
+}
+
+
+<head>
+    <style>
+        h1 {
+            text-align: center;
+            color: red;
+            font-weight: bold;
+            font-family: 'Times New Roman', Times, serif;
+        }
+
+        .table {
+            border-collapse: collapse;
+            border: solid 2px #ddd;
+        }
+
+            .table thead {
+                background-color: #ddd;
+                padding: 8px 8px;
+                text-align: center;
+                text-transform: capitalize;
+                font-size: 15px;
+            }
+
+            .table td {
+                text-align: center;
+                font-family: 'Times New Roman', Times, serif;
+                font-size: 15px;
+                border: solid 1px #ddd;
+            }
+
+        .table {
+            margin-bottom: 7%;
+            width: 80%;
+            margin-left: 8%;
+        }
+
+        p a {
+            margin-left: 8%;
+            border: solid 1px red;
+            text-decoration: none;
+            background: Red;
+            color: white;
+            padding: 8px 8px;
+        }
+
+        tr:nth-child(even) {
+            background-color: #ddd;
+        }
+    </style>
+</head>
+<br />
+
+<h1>Data_Record</h1>
+
+ <p>   
+    <a asp-action="Create">CONTACT US</a>
+</p>
+
+
+
+<div class="wrapper">
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Email)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Password)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Message)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Email)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Password)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Message)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
+</div>
+
+
+
+      
+
